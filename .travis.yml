@@ -9,5 +9,6 @@ before_install:
 script: 
   - export pwd=$PWD && echo $PWD
   - export BUILD_TAG=2.0.3
-  - docker build . -f build/Dockerfile.Slim -t toyangdon/nacos-server:$BUILD_TAG
+  - cd build
+  - docker build . -f Dockerfile.Slim -t toyangdon/nacos-server:$BUILD_TAG
   - docker push toyangdon/nacos-server:$BUILD_TAG
